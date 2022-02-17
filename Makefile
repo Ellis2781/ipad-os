@@ -1,9 +1,4 @@
-default: build
-
 build:
-	docker build -t ipad-os .
-
-run:
-	docker run -v $(pwd):/workspace:z bash bash 
-#/workspace/build.sh
-
+	cctools-port/package.sh
+	make -C xcode_tools
+	make -C kernel
